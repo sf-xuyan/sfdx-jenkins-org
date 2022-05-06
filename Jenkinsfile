@@ -28,6 +28,8 @@ node {
     // -------------------------------------------------------------------------
 
  	withEnv(["HOME=${env.WORKSPACE}"]) {	
+		
+		command "${toolbelt}/sfdx --version"
 	
 	    withCredentials([file(credentialsId: SERVER_KEY_CREDENTIALS_ID, variable: 'server_key_file')]) {
 		// -------------------------------------------------------------------------
